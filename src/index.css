@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --accent-color: #c8e45c;
+    --accent-blue: #4b65de;
+    --card-bg: rgba(255, 255, 255, 0.1);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+}
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+    @apply h-full overflow-y-auto overscroll-y-none;
+    @apply bg-[#1A1B1E] text-white;
+  }
+  
+  body {
+    @apply h-full overflow-y-auto overscroll-y-none;
+  }
+  
+  .card {
+    @apply rounded-3xl bg-[#2A2B2E] p-4 hover:ring-1 hover:ring-[#4b65de]/20 transition-all duration-300;
+  }
+  
+  .nav-item {
+    @apply rounded-full px-4 py-2 transition-colors;
+  }
+  
+  .nav-item.active {
+    @apply bg-[var(--accent-color)] text-white;
+  }
+  
+  .nav-item:not(.active) {
+    @apply text-gray-400 hover:bg-[rgba(255,255,255,0.1)];
+  }
+  
+  input[type="checkbox"] {
+    @apply cursor-pointer;
+  }
+}
+
+/* Prevent scrolling when modals are open */
+.modal-open {
+  @apply overflow-hidden;
+}
